@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organization Page</title>
+    <title>CFE TEIT | GORPT</title>
     <style>
         /* Estilo general */
         body {
@@ -13,40 +13,35 @@
             color: #333;
             line-height: 1.6;
             background-color: #ffffff; /* Fondo suave */
+            font-size: 16px; /* Tamaño base de texto para usar unidades relativas */
         }
 
+        /* Header */
         header {
             background-color: #660000; /* Color header CFE */
             color: #fff;
             text-align: center;
             position: relative;
-            padding: 0.0000001px 0; /* Espaciado superior e inferior */
+            padding: 1rem 0; /* Ajuste de padding para dispositivos móviles */
         }
 
         header img {
             width: 50%; /* Tamaño reducido de la imagen */
             height: auto;
             object-fit: contain; /* Mantiene la proporción de la imagen */
-            margin-bottom: 2rem; /* Espaciado entre la imagen y el título */
+            margin-bottom: 1rem; /* Espaciado entre la imagen y el título */
             border-radius: 8px; /* Bordes redondeados */
-        }
-
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem; /* Adjust to a size that looks good on smaller screens */
-            }
         }
 
         .container {
             max-width: 1200px;
-            margin: 4rem auto;
-            padding: 2rem;
+            margin: 2rem auto;
+            padding: 1rem;
         }
 
         .section {
-            margin-bottom: 3rem;
-            padding: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -55,7 +50,7 @@
         .section h2 {
             color: #660000; /*  para encabezados */
             margin-top: 0;
-            font-size: 2.5rem;
+            font-size: 2rem; /* Ajuste para mejor legibilidad */
             font-weight: bold;
         }
 
@@ -64,17 +59,18 @@
             color: #555;
         }
 
+        /* Grid de productos */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 1rem;
             margin-top: 2rem;
         }
 
         .product-box {
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 1rem;
             text-align: center;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -88,16 +84,16 @@
 
         .product-box a {
             text-decoration: none;
-            color: #8f0000; /*  para los enlaces */
+            color: #8f0000; /* Color de los enlaces */
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
         }
 
         footer p {
@@ -106,16 +102,40 @@
 
         /* Ajustes responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+            body {
+                font-size: 14px; /* Ajuste del tamaño de fuente para pantallas pequeñas */
             }
 
             .section h2 {
-                font-size: 2rem;
+                font-size: 1.6rem; /* Ajuste de tamaño del título */
+            }
+
+            .product-box {
+                padding: 1rem;
             }
 
             header img {
                 width: 50%; /* Ajuste para pantallas más pequeñas */
+            }
+
+            /* Ajustar márgenes y padding */
+            .container {
+                padding: 0.5rem;
+            }
+
+            .service-block {
+                padding: 1rem; /* Ajuste del padding para pantallas pequeñas */
+                margin-bottom: 1rem; /* Reducción de espacio entre los bloques */
+            }
+
+            .service-block summary {
+                font-size: 1.1rem; /* Tamaño de la fuente del summary */
+                padding: 10px; /* Ajuste de padding */
+            }
+
+            .service-block ul {
+                padding-left: 10px; /* Reducir el espacio de los ítems */
+                font-size: 0.9rem; /* Tamaño de texto más pequeño */
             }
         }
 
@@ -255,12 +275,6 @@
                     <li>- Clean Pipes</li>
                 </ul>
             </details>
-            <!-- Add more blocks as needed -->
-        </div>
-
-        <div class="section">
-            <h2>Topología de la Red Pública de Telecomunicaciones</h2>
-            <img src="diagrama.png" alt="Diagram" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;">
         </div>
 
         <div class="section">
