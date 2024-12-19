@@ -279,6 +279,13 @@
             }
         }
 
+        /* Disable scrolling */
+        .body-no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+
     </style>
 </head>
 <body>
@@ -426,13 +433,14 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("DOMContentLoaded", function () {
             const images = document.querySelectorAll(".gallery-image");
             const lightbox = document.getElementById("lightbox");
             const lightboxImg = document.getElementById("lightbox-img");
             const closeBtn = lightbox.querySelector(".close");
             const prevBtn = lightbox.querySelector(".prev");
             const nextBtn = lightbox.querySelector(".next");
+            const body = document.body;
 
             let currentIndex = 0;
 
@@ -442,6 +450,13 @@
                 lightboxImg.src = images[index].src;
                 lightboxImg.alt = images[index].alt;
                 lightbox.style.display = "flex";
+                body.classList.add("body-no-scroll"); // Disable scrolling
+            }
+
+            // Function to close lightbox
+            function closeLightbox() {
+                lightbox.style.display = "none";
+                body.classList.remove("body-no-scroll"); // Enable scrolling
             }
 
             // Function to navigate images
@@ -458,9 +473,7 @@
             });
 
             // Close lightbox
-            closeBtn.addEventListener("click", () => {
-                lightbox.style.display = "none";
-            });
+            closeBtn.addEventListener("click", closeLightbox);
 
             // Navigate using buttons
             prevBtn.addEventListener("click", () => navigateLightbox(-1));
@@ -469,7 +482,7 @@
             // Close lightbox when clicking outside the image
             lightbox.addEventListener("click", (e) => {
                 if (e.target === lightbox) {
-                    lightbox.style.display = "none";
+                    closeLightbox();
                 }
             });
 
